@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Gare;
+use App\Models\Trajet;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,12 +23,11 @@ class AbonnementFactory extends Factory
             'prenom' => $this->faker->firstName,
             'email' => $this->faker->unique()->safeEmail,
             'phone' => $this->faker->numerify('########'),
-            'lieu' => $this->faker->city,
-            'datedebut' => $this->faker->date(),
-            'datefin' => $this->faker->date(),
-            'garedepart' => $this->faker->city,
-            'garearrive' => $this->faker->city,
-            'image' => $this->faker->imageUrl(660, 360, true), 
+             'lieu' => $this->faker->city,
+             'Trajet_id' => Trajet::get('id')->random(),
+             'garedepart_id' => Gare::get('id')->random(),
+             'garearrive_id' => Gare::get('id')->random(),
+             'image' => $this->faker->imageUrl(660, 360, true),
         ];
     }
 }
