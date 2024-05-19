@@ -30,7 +30,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/Abonnements') }}" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <span>{{ __('Gare') }}</span>
+                    <span>{{ __('Gare ') }}</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
