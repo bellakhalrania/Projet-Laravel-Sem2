@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Chauffeur;
 use Illuminate\Http\Request;
 
 class ChauffeurController extends Controller
@@ -11,7 +12,8 @@ class ChauffeurController extends Controller
      */
     public function index()
     {
-        //
+        $chauffeurs=Chauffeur::all();
+        return view('chauffeurs.index',compact('chauffeurs'));
     }
 
     /**
