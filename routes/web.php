@@ -7,7 +7,7 @@ use App\Http\Controllers\TrajetController;
 use App\Http\Controllers\ChauffeurController;
 use App\Http\Controllers\BusController;
 use App\Http\Controllers\GareController;
-
+use App\Http\Controllers\find_trajet;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +34,4 @@ Route::resource('trajets', TrajetController::class);
 Route::resource('chauffeurs', ChauffeurController::class);
 Route::resource('buses', BusController::class);
 
-
+Route::resource('findtrajet',find_trajet::class);

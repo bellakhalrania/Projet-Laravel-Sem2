@@ -31,4 +31,9 @@ class TrajetFactory extends Factory
             'arrival_time' => $this->faker->dateTimeBetween('+1 week', '+2 weeks'),
         ];
     }
+
+    protected $casts = [
+        'departure_time' => 'datetime',
+        'arrival_time' => 'datetime',
+    ];
 }

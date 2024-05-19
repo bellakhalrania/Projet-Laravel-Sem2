@@ -46,7 +46,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item " href="{{ url('/Abonnements') }}"> <i class="fa fa-briefcase mr-2"></i> {{ __('list des abonnements') }}</a>
-                       
+                        <a class="collapse-item " href="{{ route('findtrajet.index') }}"> <i class="fa fa-user mr-2"></i> {{ __('find trajet') }}</a>
                     </div>
                 </div>
             </li>
