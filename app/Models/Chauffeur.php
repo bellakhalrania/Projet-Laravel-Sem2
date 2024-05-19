@@ -13,4 +13,7 @@ class Chauffeur extends Model
     {
         return $this->belongsToMany(Bus::class);
     }
+    public function trajets(){
+        return $this->hasMany(Trajet::class);
+    }
 }
