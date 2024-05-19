@@ -9,10 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 class Gare extends Model
 {
     use HasFactory;
-    protected $guarded=[];
+    //protected $guarded=[];
 
     public function abonnements(){
-        return $this->belongsTo(Abonnement::class);
+        return $this->hasMany(Abonnement::class);
     }
     /*
     protected $fillable = [
