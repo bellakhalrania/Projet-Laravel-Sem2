@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bus;
 use Illuminate\Http\Request;
 
 class BusController extends Controller
@@ -11,7 +12,8 @@ class BusController extends Controller
      */
     public function index()
     {
-        //
+        $Buses=Bus::all();
+        return view('Buses.index',compact('Buses'));
     }
 
     /**
@@ -19,7 +21,7 @@ class BusController extends Controller
      */
     public function create()
     {
-        //
+        return view('buses.create');
     }
 
     /**
@@ -27,38 +29,56 @@ class BusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+            $request->validate([
+                'name' => 'required',
+                'matricule' => 'required',
+                'model' => 'required',
+                'line' => 'required',
+                'etat' => 'required|boolean',
+            ]);
+    
+            Bus::create($request->all());
+            return redirect()->route('buses.index')
+                             ->with('success', 'Bus created successfully.');
+        
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Bus $bus)
     {
-        //
+        return view('buses.show', compact('bus'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function edit(Bus $bus)
     {
-        //
+        return view('buses.edit', compact('bus'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Bus $bus)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'matricule' => 'required',
+            'model' => 'required',
+            'line' => 'required',
+            'etat' => 'required|boolean',
+        ]);
+
+        $bus->update($request->all());
+        return redirect()->route('buses.index')
+                         ->with('success', 'Bus updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function destroy(Bus $bus)
     {
-        //
+        $bus->delete();
+        return redirect()->route('buses.index')
+                         ->with('success', 'Bus deleted successfully.');
     }
 }
