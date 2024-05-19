@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\AbonnementController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GareController;
 
 
 /*
@@ -23,8 +23,12 @@ Route::get('/front', function () {
     return view('frontend.passager');
 });
 
+
 Route::resource('Abonnements',AbonnementController::class);
 
 use App\Http\Controllers\TrajetController;
+use Illuminate\Support\Facades\Route;
+
 
 Route::resource('trajets', TrajetController::class);
+Route::resource('gares', GareController::class);

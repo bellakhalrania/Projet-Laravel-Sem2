@@ -28,7 +28,7 @@ class AbonnementController extends Controller
     {
         $trajets=Trajet::all();
         $gares= Gare::all();
-        return view('abonnements.create',compact('trajets','gares'));
+        return view('backend.abonnements.create',compact('trajets','gares'));
         
     }
 
@@ -45,14 +45,14 @@ class AbonnementController extends Controller
             'phone' => 'required|integer',
             'lieu' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'trajet_id' => 'required|exists:trajets,id',
-            'garedepart_id' => 'required|exists:gares,id',
-            'garearrive_id' => 'required|exists:gares,id',
+            'trajet_id' => 'required',
+            'garedepart_id' => 'required',
+            'garearrive_id' => 'required',
         ]);
     
         // Handle the image upload
         if ($request->hasFile('image')) {
-            $image = Storage::disk('public')->put('posts', $request->file('image'));
+            $image = Storage::disk('public')->put('abonnements', $request->file('image'));
         } else {
             $image = null;
         }
@@ -73,7 +73,7 @@ class AbonnementController extends Controller
         $newAbonnement->save();
     
         // Redirect to the show route with a success message
-        return redirect()->route('abonnements.show', $newAbonnement->id)->with('success', 'Abonnement created successfully');
+        return redirect()->route('Abonnements.show', $newAbonnement->id)->with('success', 'Abonnement created successfully');
     }
 
     /**
@@ -81,7 +81,8 @@ class AbonnementController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $abonnement=Abonnement::with('trajet','gare1','gare2',)->findOrFail($id);
+        return view('backend.abonnements.show',compact('abonnement'));
     }
 
     /**
