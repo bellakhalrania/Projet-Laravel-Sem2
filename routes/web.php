@@ -30,8 +30,9 @@ Route::get('/front', function () {
     return view('frontend.passager');
 });
 
+
 Route::resource('gares', GareController::class);
 Route::resource('Abonnements',AbonnementController::class);
 Route::resource('trajets', TrajetController::class);
 Route::resource('chauffeurs', ChauffeurController::class);
-Route::resource('Buses', BusController::class);
+Route::resource('buses', BusController::class);

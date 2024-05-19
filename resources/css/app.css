@@ -1,0 +1,11 @@
+.btn-info .bi-eye-fill {
+    color: blue; /* Couleur de l'icône "Voir" */
+}
+
+.btn-warning .bi-pencil-fill {
+    color: orange; /* Couleur de l'icône "Modifier" */
+}
+
+.btn-danger .bi-trash-fill {
+    color: red; /* Couleur de l'icône "Supprimer" */
+}
