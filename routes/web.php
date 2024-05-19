@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TrajetController;
 use App\Http\Controllers\ChauffeurController;
 use App\Http\Controllers\BusController;
+
+
 use App\Http\Controllers\GareController;
 
 
@@ -32,4 +34,4 @@ Route::resource('gares', GareController::class);
 Route::resource('Abonnements',AbonnementController::class);
 Route::resource('trajets', TrajetController::class);
 Route::resource('chauffeurs', ChauffeurController::class);
-
+Route::resource('Buses', BusController::class);
