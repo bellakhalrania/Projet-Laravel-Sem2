@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\AbonnementController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\TrajetController;
+use App\Http\Controllers\ChauffeurController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,7 @@ Route::get('/front', function () {
 
 Route::resource('Abonnements',AbonnementController::class);
 
-use App\Http\Controllers\TrajetController;
+
 
 Route::resource('trajets', TrajetController::class);
+Route::resource('chauffeurs', ChauffeurController::class);
