@@ -37,7 +37,8 @@ class ChauffeurController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $chauffeur=Chauffeur::findOrFail($id);
+        return view('chauffeurs.show',compact('chauffeur'));
     }
 
     /**
