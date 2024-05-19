@@ -27,9 +27,6 @@ Route::get('/front', function () {
 });
 
 Route::resource('Abonnements',AbonnementController::class);
-
-
-
 Route::resource('trajets', TrajetController::class);
 Route::resource('chauffeurs', ChauffeurController::class);
-Route::resource('Bus', BusController::class);
+Route::resource('buses', BusController::class);

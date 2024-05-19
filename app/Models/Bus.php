@@ -9,6 +9,14 @@ class Bus extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name', 
+        'matricule', 
+        'model', 
+        'line', 
+        'etat'
+    ];
+
     public function chauffeur()
     {
         return $this->belongsToMany(Chauffeur::class);
@@ -19,4 +27,5 @@ class Bus extends Model
     {
         return $this->hasMany(Trajet::class);
     }
+    
 }
