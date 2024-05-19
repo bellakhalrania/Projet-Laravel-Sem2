@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\AbonnementController;
-use App\Http\Controllers\BusController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TrajetController;
 use App\Http\Controllers\ChauffeurController;
+use App\Http\Controllers\BusController;
+use App\Http\Controllers\GareController;
 
 
 /*
@@ -26,7 +28,8 @@ Route::get('/front', function () {
     return view('frontend.passager');
 });
 
+Route::resource('gares', GareController::class);
 Route::resource('Abonnements',AbonnementController::class);
 Route::resource('trajets', TrajetController::class);
 Route::resource('chauffeurs', ChauffeurController::class);
-Route::resource('buses', BusController::class);
+

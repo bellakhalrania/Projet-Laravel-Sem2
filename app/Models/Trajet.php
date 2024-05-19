@@ -11,7 +11,7 @@ class Trajet extends Model
     use HasFactory;
 
    public function abonnements(){
-        return $this->belongsTo(Abonnement::class);
+        return $this->hasMany(Abonnement::class);
     }
    public function bus()
     {
