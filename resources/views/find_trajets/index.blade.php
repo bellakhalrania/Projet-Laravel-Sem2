@@ -9,27 +9,27 @@
     <!-- Content Row -->
         <div class="card">
             <div class="card-header py-3 d-flex">
-                <form >
+                <form method="POST" action="{{ route('findtrajet.store') }}">
                     @csrf 
                     <div class="row" style="margin-top: 5px;">
                         <div class="col-12 d-flex " style="column-gap: 2rem; align-items: center;">
                             <div class="form-group">
-                                <label for="time_from">{{ __('depart') }}</label>
-                                <input type="text" class="form-control datetime" id="time_from" name="time_from"   required/>
+                                <label for="departure">{{ __('departure') }}</label>
+                                <input type="text" class="form-control " id="departure" name="departure"   required/>
                                 <p class="help-block"></p>
-                                @if($errors->has('time_from'))
+                                @if($errors->has('departure'))
                                     <p class="help-block">
-                                        {{ $errors->first('time_from') }}
+                                        {{ $errors->first('departure') }}
                                     </p>
                                 @endif
                             </div>
                             <div class="form-group">
-                                <label for="time_to">{{ __('destination') }}</label>
-                                <input type="text" class="form-control datetime" id="time_to" name="time_to"  required />
+                                <label >{{ __('destination') }}</label>
+                                <input type="text" class="form-control " id="Destination" name="Destination"  required />
                                 <p class="help-block"></p>
-                                @if($errors->has('time_to'))
+                                @if($errors->has('Destination'))
                                     <p class="help-block">
-                                        {{ $errors->first('time_to') }}
+                                        {{ $errors->first('Destination') }}
                                     </p>
                                 @endif
                             </div>
