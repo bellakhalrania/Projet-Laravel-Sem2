@@ -11,8 +11,13 @@ use Illuminate\Database\Eloquent\Model;
 class abonnement extends Model
 {
     use HasFactory;
-    public function gare(){
-        return $this->belongsTo(Gare::class);
+    public function gare1()
+    {
+        return $this->belongsTo(Gare::class, 'garedepart_id'); // specify the foreign key if it is not 'gare_id'
+    }
+    public function gare2()
+    {
+        return $this->belongsTo(Gare::class, 'garearrive_id'); // specify the foreign key if it is not 'gare_id'
     }
 
     public function trajet(){
