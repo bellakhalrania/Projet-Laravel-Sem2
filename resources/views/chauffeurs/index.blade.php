@@ -23,7 +23,7 @@
 
     </head>
     <body>
-    
+    <a href="{{url('/chauffeurs/create')}}" class="btn btn-primary">ajouter chauffeur</a>
 <div class="container mt-3">
   <h2>Bordered Table</h2>
   <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>            
@@ -48,7 +48,7 @@
         <td>{{$chauffeur->salaire}}</td>
         <td>{{ substr($chauffeur->adresse,1,40).'...'}}</td>
         <td>
-        <a href="{{url('/chauffeurs/'.$chauffeur->id)}}" class="btn btn-primary">show</a>
+        <a href="{{url('/chauffeurs/'.$chauffeur->id)}}" class="btn btn-success">show</a>
         <button type="button" class="btn btn-warning">update</button>
         <button type="button" class="btn btn-danger">Delete</button>
         </td>

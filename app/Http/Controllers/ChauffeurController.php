@@ -21,7 +21,7 @@ class ChauffeurController extends Controller
      */
     public function create()
     {
-        //
+        return view('chauffeurs.create');
     }
 
     /**
@@ -29,7 +29,15 @@ class ChauffeurController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newChauffeur=new Chauffeur();
+        $newChauffeur->ncin=$request->ncin;
+        $newChauffeur->nom=$request->nom;
+        $newChauffeur->prenom=$request->prenom;
+        $newChauffeur->salaire=$request->salaire;
+        $newChauffeur->adresse=$request->adresse;
+
+        $newChauffeur->save();
+        return redirect()->route('chauffeurs.show', $newChauffeur->id);
     }
 
     /**
