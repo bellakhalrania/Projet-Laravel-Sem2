@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\AbonnementController;
+use App\Http\Controllers\BusController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TrajetController;
 use App\Http\Controllers\ChauffeurController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +32,4 @@ Route::resource('Abonnements',AbonnementController::class);
 
 Route::resource('trajets', TrajetController::class);
 Route::resource('chauffeurs', ChauffeurController::class);
+Route::resource('Bus', BusController::class);
