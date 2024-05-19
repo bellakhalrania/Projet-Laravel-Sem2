@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Chauffeur;
 use Illuminate\Http\Request;
 
 class ChauffeurController extends Controller
@@ -11,7 +12,8 @@ class ChauffeurController extends Controller
      */
     public function index()
     {
-        //
+        $chauffeurs=Chauffeur::all();
+        return view('chauffeurs.index',compact('chauffeurs'));
     }
 
     /**
@@ -19,7 +21,7 @@ class ChauffeurController extends Controller
      */
     public function create()
     {
-        //
+        return view('chauffeurs.create');
     }
 
     /**
@@ -27,7 +29,15 @@ class ChauffeurController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newChauffeur=new Chauffeur();
+        $newChauffeur->ncin=$request->ncin;
+        $newChauffeur->nom=$request->nom;
+        $newChauffeur->prenom=$request->prenom;
+        $newChauffeur->salaire=$request->salaire;
+        $newChauffeur->adresse=$request->adresse;
+
+        $newChauffeur->save();
+        return redirect()->route('chauffeurs.show', $newChauffeur->id);
     }
 
     /**
@@ -35,7 +45,8 @@ class ChauffeurController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $chauffeur=Chauffeur::findOrFail($id);
+        return view('chauffeurs.show',compact('chauffeur'));
     }
 
     /**
