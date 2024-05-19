@@ -13,4 +13,8 @@ class Trajet extends Model
    public function abonnements(){
         return $this->hasMany(Abonnement::class);
     }
+   public function bus()
+    {
+        return $this->belongsTo(Bus::class);
+    }
 }

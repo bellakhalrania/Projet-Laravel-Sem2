@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
             
             TrajetSeeder::class,
             AbonnementSeeder::class,
+            busSeeder::class,
+            
            // ChauffeurSeeder::class,
         ]);
         
