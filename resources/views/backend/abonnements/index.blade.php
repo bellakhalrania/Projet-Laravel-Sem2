@@ -13,14 +13,14 @@
                     {{ __('booking') }}
                 </h6>
                 <div class="ml-auto">
-                    @can('booking_create')
-                    <a href="{{ route('backend.abonnements.create') }}" class="btn btn-primary">
+                  
+                    <a href="{{ route('Abonnements.create') }}" class="btn btn-primary">
                         <span class="icon text-white-50">
                             <i class="fa fa-plus"></i>
                         </span>
                         <span class="text">{{ __('New abonnement') }}</span>
                     </a>
-                    @endcan
+                   
                 </div>
             </div>
             <div class="card-body">
@@ -37,15 +37,12 @@
         <th>Email</th>
         <th>Téléphone</th>
         <th>Lieu</th>
-        <th>Trajet</th>
-        <th>Gare de départ</th>
-        <th>Gare d'arrivée</th>
+        
         <th>Options</th>
                             </tr>
                         </thead>
                         <tbody>
                             @forelse($abonnements as $abonnement)
-                          
                             <tr>
                               <td></td>
                               <td>{{ $abonnement->nom }}</td>
@@ -53,12 +50,9 @@
                               <td>{{ $abonnement->email }}</td>
                               <td>{{ $abonnement->phone }}</td>
                               <td>{{ $abonnement->lieu }}</td>
-                              <td>{{ $abonnement->trajet->departure }}</td>
-                              <td>{{ $abonnement->trajet->destination }}</td>
-                              <td>{{ $abonnement->trajet->destination }}</td>
                               <td>
                                 <a href="{{Route('Abonnements.show',$abonnement->id)}}" class="btn btn-outline-info btn-sm">Show</a>
-                                <a href="" class="btn btn-outline-warning btn-sm">Edit</a>
+                                
                               </td>
                             </tr>
                             @empty
