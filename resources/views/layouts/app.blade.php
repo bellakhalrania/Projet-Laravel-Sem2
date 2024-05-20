@@ -18,7 +18,7 @@
 
     <nav>
     <!-- Autres liens de navigation -->
-    <a href="{{ route('trajet.index') }}">Liste des Trajets</a>
+    <a href="{{ route('trajet.index') }}">Liste Des Trajets</a>
 </nav>
 </head>
 <body>
