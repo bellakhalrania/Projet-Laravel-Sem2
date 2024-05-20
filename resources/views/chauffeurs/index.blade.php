@@ -23,6 +23,12 @@
 
     </head>
     <body>
+    @if (Session::has('success'))
+        <div class="alert alert-success" role="alert">
+           
+          {{Session::get('success')}}
+        </div>
+    @endif
     <a href="{{url('/chauffeurs/create')}}" class="btn btn-primary">ajouter chauffeur</a>
 <div class="container mt-3">
   <h2>Bordered Table</h2>
@@ -50,7 +56,11 @@
         <td>
         <a href="{{route('chauffeurs.show',$chauffeur->id)}}" class="btn btn-success">show</a>
         <a href="{{route('chauffeurs.edit',$chauffeur->id)}}" class="btn btn-warning">update</a>
-        <button type="button" class="btn btn-danger">Delete</button>
+        <form action="{{route('chauffeurs.destroy',$chauffeur->id)}}" method="post">
+        @csrf <!-- Ensure CSRF protection -->
+        @method('delete')
+        <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
         </td>
       </tr>
       @endforeach

@@ -85,7 +85,12 @@ class ChauffeurController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $chauffeur=Chauffeur::findOrFail($id);
+        $chauffeur->delete();
+        
+        return redirect()->route('chauffeurs.index', $chauffeur->id)->with('success', 'Chauffeur deleted successfully.');
+    
+
     }
     public function validationRules(){
         return[
