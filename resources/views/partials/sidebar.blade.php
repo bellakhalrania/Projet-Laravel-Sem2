@@ -18,59 +18,40 @@
             <hr class="sidebar-divider">
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/Abonnements') }}" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <span>{{ __('Abonnement') }}</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item " href="{{ url('/Abonnements') }}"> <i class="fa fa-briefcase mr-2"></i> {{ __('list des abonnements') }}</a>
+                        <a class="collapse-item " href="{{ route('findtrajet.index') }}"> <i class="fa fa-user mr-2"></i> {{ __('find trajet') }}</a>
                        
                     </div>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/gares') }}" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link" href="{{ url('/gares') }}" data-toggle="collapse" >
                     <span>{{ __('Gare ') }}</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item " href="{{ url('/gares') }}"> <i class="fa fa-briefcase mr-2"></i> {{ __('list des gares') }}</a>
-                       
-                    </div>
-                </div>
+                
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/Abonnements') }}" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link" href="{{ url('/trajets') }}" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <span>{{ __('Trajet') }}</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item " href="{{ url('/Abonnements') }}"> <i class="fa fa-briefcase mr-2"></i> {{ __('list des abonnements') }}</a>
-                        <a class="collapse-item " href="{{ route('findtrajet.index') }}"> <i class="fa fa-user mr-2"></i> {{ __('find trajet') }}</a>
-                    </div>
-                </div>
+                
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/Abonnements') }}" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link" href="{{ url('/buses') }}" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <span>{{ __('Bus') }}</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item " href="{{ url('/Abonnements') }}"> <i class="fa fa-briefcase mr-2"></i> {{ __('list des abonnements') }}</a>
-                       
-                    </div>
-                </div>
+               
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/Abonnements') }}" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link" href="{{ url('/chauffeurs') }}"  data-toggle="collapse" aria-expanded="true" aria-controls="collapseTwo">
                     <span>{{ __('Chauffeur') }}</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item " href="{{ url('/Abonnements') }}"> <i class="fa fa-briefcase mr-2"></i> {{ __('list des abonnements') }}</a>
-                       
-                    </div>
-                </div>
+                
             </li>
 
            
@@ -86,3 +67,5 @@
 
 
         </ul>
+
+        
