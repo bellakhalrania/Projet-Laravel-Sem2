@@ -48,8 +48,8 @@
         <td>{{$chauffeur->salaire}}</td>
         <td>{{ substr($chauffeur->adresse,1,40).'...'}}</td>
         <td>
-        <a href="{{url('/chauffeurs/'.$chauffeur->id)}}" class="btn btn-success">show</a>
-        <button type="button" class="btn btn-warning">update</button>
+        <a href="{{route('chauffeurs.show',$chauffeur->id)}}" class="btn btn-success">show</a>
+        <a href="{{route('chauffeurs.edit',$chauffeur->id)}}" class="btn btn-warning">update</a>
         <button type="button" class="btn btn-danger">Delete</button>
         </td>
       </tr>

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Chaufffeur;
 use App\Models\Trajet;
 use Illuminate\Http\Request;
 
@@ -21,7 +21,8 @@ class TrajetController extends Controller
      */
     public function create()
     {
-        return view('trajets.create');
+        $chauffeurs=Chauffeur::all();
+        return view('trajets.create',compact('chauffeurs'));
     }
 
     /**
@@ -45,6 +46,7 @@ class TrajetController extends Controller
      */
     public function show(Trajet $trajet)
     {
+        $trajet=Trajet::with('chauffeur')->findOrFail($id);
         return view('trajets.show', compact('trajet'));
     }
 

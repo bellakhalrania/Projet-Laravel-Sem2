@@ -1,3 +1,9 @@
+@if (Session::has('success'))
+        <div class="alert alert-danger" role="role">
+           
+          {{Session::get('success')}}
+        </div>
+    @endif
 <h2>chauffeur details</h2>
     <div class="card mb-3">
        
