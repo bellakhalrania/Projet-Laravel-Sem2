@@ -29,38 +29,31 @@
                     </div>
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('/gares') }}" data-toggle="collapse" >
-                    <span>{{ __('Gare ') }}</span>
-                </a>
-                
+            <li class="nav-item ">
+                <a class="nav-link" href="{{ route('gares.index') }}">
+                    <i class="fas fa-fw fa-calendar"></i>
+                    <span>{{ __('Gare ') }}</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('/trajets') }}" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <span>{{ __('Trajet') }}</span>
-                </a>
-                
+            <li class="nav-item ">
+                <a class="nav-link" href="{{ route('trajets.index') }}">
+                    <i class="fas fa-fw fa-calendar"></i>
+                    <span>{{ __('Trajet') }}</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('/buses') }}" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <span>{{ __('Bus') }}</span>
-                </a>
-               
+            <li class="nav-item ">
+                <a class="nav-link" href="{{ route('buses.index') }}">
+                    <i class="fas fa-fw fa-calendar"></i>
+                    <span>{{ __('Bus') }}</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('/chauffeurs') }}"  data-toggle="collapse" aria-expanded="true" aria-controls="collapseTwo">
-                    <span>{{ __('Chauffeur') }}</span>
-                </a>
-                
+            <li class="nav-item ">
+                <a class="nav-link" href="{{ route('chauffeurs.index') }}">
+                    <i class="fas fa-fw fa-calendar"></i>
+                    <span>{{ __('Chauffeur') }}</span></a>
             </li>
-
-           
             
             
-
                      <!-- Nav Item  -->
              <li class="nav-item ">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{ route('gares.index') }}">
                     <i class="fas fa-fw fa-calendar"></i>
                     <span>{{ __('Calendar') }}</span></a>
             </li>
