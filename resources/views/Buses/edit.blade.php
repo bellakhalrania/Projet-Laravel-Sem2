@@ -1,5 +1,3 @@
-<!-- resources/views/buses/edit.blade.php -->
-
 @extends('layouts.app')
 
 @section('content')
@@ -34,4 +32,63 @@
         <button type="submit" class="btn btn-primary">Mettre à jour</button>
     </form>
 </div>
+<style>
+.container {
+ 
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+select {
+    width: calc(100% - 24px); /* compenser la largeur du padding */
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #f2f2f2;
+    transition: background-color 0.3s;
+    font-family: 'Arial', sans-serif;
+}
+
+input[type="text"]:focus,
+select:focus {
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #c1b5f9; /* Soft Orange */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Arial', sans-serif; /* Jolie police */
+}
+
+.btn-primary:hover {
+    background-color: #9389c0; /* Softer Orange */
+}
+</style>
 @endsection

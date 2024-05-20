@@ -21,6 +21,7 @@ class BusController extends Controller
      */
     public function create()
     {
+
         return view('buses.create');
     }
 
@@ -49,6 +50,7 @@ class BusController extends Controller
      */
     public function show(Bus $bus)
     {
+        
         return view('buses.show', compact('bus'));
     }
 
