@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Chauffeur;
 use Illuminate\Http\Request;
 
 class ChauffeurController extends Controller
@@ -11,7 +12,8 @@ class ChauffeurController extends Controller
      */
     public function index()
     {
-        //
+        $chauffeurs=Chauffeur::all();
+        return view('chauffeurs.index',compact('chauffeurs'));
     }
 
     /**
@@ -19,7 +21,7 @@ class ChauffeurController extends Controller
      */
     public function create()
     {
-        //
+        return view('chauffeurs.create');
     }
 
     /**
@@ -27,7 +29,17 @@ class ChauffeurController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate($this->validationRules());
+        $newChauffeur=new Chauffeur();
+        $newChauffeur->ncin=$request->ncin;
+        $newChauffeur->nom=$request->nom;
+        $newChauffeur->prenom=$request->prenom;
+        $newChauffeur->salaire=$request->salaire;
+        $newChauffeur->adresse=$request->adresse;
+
+        $newChauffeur->save();
+        
+        return redirect()->route('chauffeurs.show', $newChauffeur->id)->with('success', 'Chauffeur created successfully.');
     }
 
     /**
@@ -35,7 +47,8 @@ class ChauffeurController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $chauffeur=Chauffeur::findOrFail($id);
+        return view('chauffeurs.show',compact('chauffeur'));
     }
 
     /**
@@ -43,7 +56,8 @@ class ChauffeurController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $chauffeur=Chauffeur::findOrFail($id);
+        return view('chauffeurs.edit',compact('chauffeur'));
     }
 
     /**
@@ -51,7 +65,19 @@ class ChauffeurController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate($this->validationRules());
+        $chauffeur=Chauffeur::findOrFail($id);
+        
+        $chauffeur->ncin=$request->ncin;
+        $chauffeur->nom=$request->nom;
+        $chauffeur->prenom=$request->prenom;
+        $chauffeur->salaire=$request->salaire;
+        $chauffeur->adresse=$request->adresse;
+
+        $chauffeur->save();
+        
+        return redirect()->route('chauffeurs.show', $chauffeur->id)->with('success', 'Chauffeur updated successfully.');
+    
     }
 
     /**
@@ -59,6 +85,20 @@ class ChauffeurController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $chauffeur=Chauffeur::findOrFail($id);
+        $chauffeur->delete();
+        
+        return redirect()->route('chauffeurs.index', $chauffeur->id)->with('success', 'Chauffeur deleted successfully.');
+    
+
+    }
+    public function validationRules(){
+        return[
+            'ncin' => 'required|digits:8',
+            'nom' => 'required|string|max:255',
+            'prenom' => 'required|string|max:255',
+            'salaire' => 'required|numeric',
+            'adresse' => 'required|string|max:255',
+        ];
     }
 }

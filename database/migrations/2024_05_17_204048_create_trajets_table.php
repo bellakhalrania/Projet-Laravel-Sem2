@@ -18,6 +18,7 @@ return new class extends Migration
         $table->dateTime('departure_time');
         $table->dateTime('arrival_time');
         $table->timestamps();
+        $table->foreignId('chauffeur_id')->references('id')->on('chauffeurs');
     });
 }
     /**

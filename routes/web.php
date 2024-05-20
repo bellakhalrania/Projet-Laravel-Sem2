@@ -9,7 +9,7 @@ use App\Http\Controllers\BusController;
 
 
 use App\Http\Controllers\GareController;
-
+use App\Http\Controllers\find_trajet;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,5 +35,6 @@ Route::resource('gares', GareController::class);
 Route::resource('Abonnements',AbonnementController::class);
 Route::resource('trajets', TrajetController::class);
 Route::resource('chauffeurs', ChauffeurController::class);
-
 Route::resource('buses', BusController::class);
+Route::resource('findtrajet',find_trajet::class);
+

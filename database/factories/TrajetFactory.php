@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Factories;
-
+use App\Models\Chauffeur;
 use App\Models\Trajet;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -24,11 +24,19 @@ class TrajetFactory extends Factory
      */
     public function definition()
     {
+        $chauffeurIds = Chauffeur::pluck('id');
+        
         return [
             'departure' => $this->faker->city,
             'destination' => $this->faker->city,
             'departure_time' => $this->faker->dateTimeBetween('now', '+1 week'),
             'arrival_time' => $this->faker->dateTimeBetween('+1 week', '+2 weeks'),
+            'chauffeur_id' => $chauffeurIds->isNotEmpty() ? $chauffeurIds->random() : null,
         ];
     }
+
+    protected $casts = [
+        'departure_time' => 'datetime',
+        'arrival_time' => 'datetime',
+    ];
 }

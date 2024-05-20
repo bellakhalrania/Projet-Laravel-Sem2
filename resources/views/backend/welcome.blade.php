@@ -1,6 +1,6 @@
 @extends('backend.app')
-@section('content') 
-
+@section('content')
+ 
 <div class="container-fluid">
 
     <!-- Page Heading -->
