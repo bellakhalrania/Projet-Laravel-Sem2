@@ -16,7 +16,10 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-
+    <nav>
+    <!-- Autres liens de navigation -->
+    <a href="{{ route('trajet.index') }}">Liste des Trajets</a>
+</nav>
 </head>
 <body>
     @include('Buses.nav')
