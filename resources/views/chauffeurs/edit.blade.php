@@ -1,4 +1,4 @@
-<form action="{{ route('chauffeurs.update',$chauffeur->id) }}" method="post">
++<form action="{{ route('chauffeurs.update',$chauffeur->id) }}" method="post">
   @csrf <!-- Ensure CSRF protection -->
   @method('PUT')
   <!-- 2 column grid layout with text inputs for the first and last names -->
