@@ -1,7 +1,8 @@
 <?php
 
 namespace Database\Factories;
-
+use App\Models\Chauffeur;
+use App\Models\Trajet;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,16 +21,20 @@ class ChauffeurFactory extends Factory
            'ncin' =>fake()->ean8(),
            'nom'=> fake()->word(),
            'prenom'=> fake()->word(),
-           'salaire'=>fake()->randomFloat(2),
-           'adresse'=>fake()->paragraph()
+           'salaire' => $this->faker->randomFloat(2, 1000, 999999), 
+
+           'adresse' => $this->faker->address(),
            
         ];
     }
     public function configure()
     {
         return $this->afterCreating(function (Chauffeur $chauffeur) {
-            // Create 2 to 5 trajets for each chauffeur
-            Trajet::factory()->count(random_int(2, 5))->create(['chauffeur_id' => $chauffeur->id]);
+            // Create between 2 to 5 trajets for each chauffeur
+            $trajetsCount = random_int(2, 5);
+            Trajet::factory()->count($trajetsCount)->create([
+                'chauffeur_id' => $chauffeur->id,
+            ]);
         });
     }
 }
