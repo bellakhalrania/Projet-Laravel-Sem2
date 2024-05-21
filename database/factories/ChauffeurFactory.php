@@ -1,7 +1,8 @@
 <?php
 
 namespace Database\Factories;
-
+use App\Models\Chauffeur;
+use App\Models\Trajet;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
