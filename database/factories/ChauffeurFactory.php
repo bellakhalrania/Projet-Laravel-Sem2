@@ -27,14 +27,5 @@ class ChauffeurFactory extends Factory
            
         ];
     }
-    public function configure()
-    {
-        return $this->afterCreating(function (Chauffeur $chauffeur) {
-            // Create between 2 to 5 trajets for each chauffeur
-            $trajetsCount = random_int(2, 5);
-            Trajet::factory()->count($trajetsCount)->create([
-                'chauffeur_id' => $chauffeur->id,
-            ]);
-        });
-    }
+    
 }
