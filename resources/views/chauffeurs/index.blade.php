@@ -9,7 +9,7 @@
     @endif
     <a href="{{url('/chauffeurs/create')}}" class="btn btn-primary">ajouter chauffeur</a>
 <div class="container mt-3">
-  <h2>Bordered Table</h2>
+  <h2>tableau chauffeurs</h2>
   <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>            
   <table class="table table-bordered">
     <thead>
