@@ -106,6 +106,18 @@ class AbonnementController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+         //
+        // Récupérer le Post à supprimer
+        $Abonnement = Abonnement::findOrFail($id);
+
+        // Effacer l'image du Storage
+        $image= $Abonnement->image;
+        if (Storage::disk('public')->exists($image)) {
+            Storage::disk('public')->delete($image);
+        }
+        
+        $Abonnement->delete();
+        return redirect()->route('Abonnements.index')->with('success', 'Post deleted successfully');
+                  
     }
 }

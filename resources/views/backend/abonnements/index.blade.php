@@ -52,7 +52,11 @@
                               <td>{{ $abonnement->lieu }}</td>
                               <td>
                                 <a href="{{Route('Abonnements.show',$abonnement->id)}}" class="btn btn-outline-info btn-sm">Show</a>
-                                
+                                <form action="{{ route('Abonnements.destroy', $abonnement->id) }}"  onsubmit="return confirm('Delete Abonnement ?')" method="POST" style="display:inline-block;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
                               </td>
                             </tr>
                             @empty
