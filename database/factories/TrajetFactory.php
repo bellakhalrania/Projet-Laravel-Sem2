@@ -31,7 +31,8 @@ class TrajetFactory extends Factory
             'destination' => $this->faker->city,
             'departure_time' => $this->faker->dateTimeBetween('now', '+1 week'),
             'arrival_time' => $this->faker->dateTimeBetween('+1 week', '+2 weeks'),
-            'chauffeur_id' => $chauffeurIds->isNotEmpty() ? $chauffeurIds->random() : null,
+            'chauffeur_id' => Chauffeur::get('id')->random(),
+            
         ];
     }
 

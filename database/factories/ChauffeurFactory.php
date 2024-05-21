@@ -17,19 +17,15 @@ class ChauffeurFactory extends Factory
     public function definition(): array
     {
         return [
-           'ncin' =>fake()->ean8(),
-           'nom'=> fake()->word(),
-           'prenom'=> fake()->word(),
-           'salaire'=>fake()->randomFloat(2),
-           'adresse'=>fake()->paragraph()
+
+            'ncin' => $this->faker->numerify('########'),
+            'nom' => $this->faker->firstName,
+            'prenom' => $this->faker->lastName,
+            'salaire' => $this->faker->numerify('########'),
+            'adresse' => $this->faker->city,
+           
            
         ];
     }
-    public function configure()
-    {
-        return $this->afterCreating(function (Chauffeur $chauffeur) {
-            // Create 2 to 5 trajets for each chauffeur
-            Trajet::factory()->count(random_int(2, 5))->create(['chauffeur_id' => $chauffeur->id]);
-        });
-    }
+    
 }

@@ -20,12 +20,12 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             GareSeeder::class,
-            
+            ChauffeurSeeder::class,
             TrajetSeeder::class,
             AbonnementSeeder::class,
            // busSeeder::class,
             
-           // ChauffeurSeeder::class,
+           // 
         ]);
         
 
