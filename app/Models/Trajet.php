@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use App\Models\Abonnement;
+use App\Models\Bus;
+use App\Models\Chauffeur;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,6 +21,6 @@ class Trajet extends Model
     }
     public function chauffeur()
     {
-        return $this->belongsToMany(Chauffeur::class);
+        return $this->belongsTo(Chauffeur::class);
     }
 }
